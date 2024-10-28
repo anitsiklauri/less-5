@@ -1,0 +1,118 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.wraper {
+  max-width: 500px;
+  width: 100%;
+  height: 500px;
+  background-color: lightblue;
+  position: relative;
+  /* transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 3s; */
+  transition: all 2s linear 3s;
+}
+.child {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: all 3s;
+}
+.wraper:hover {
+  background-color: brown;
+}
+.child:hover {
+  background-color: lawngreen;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* .wraper:hover .child {
+  background-color: coral;
+} */
+.car-wraper {
+  /* position: relative; */
+  /* height: 200px; */
+}
+.car-image {
+  height: 100px;
+  /* animation-name: carmove;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  animation-direction:alternate*/
+
+  animation: carmove 5s infinite 2s linear alternate;
+  /* position: absolute; */
+}
+/* @keyframes carmove {
+  from {
+    left: 0;
+  }
+  to {
+    left: 800px;
+  }
+} */
+
+@keyframes carmove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(800px);
+  }
+}
+
+/* resposnive example */
+.container {
+  max-width: 1197px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: lightseagreen;
+  display: flex;
+}
+.left {
+  max-width: 608px;
+  width: 100%;
+  background-color: lightpink;
+  margin-right: 85px;
+  height: 480px;
+}
+.right {
+  max-width: 504px;
+  width: 100%;
+  height: 480px;
+  background-image: url("../images/Illustration.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.add {
+  width: 160px;
+  height: 48px;
+  background-color: #f84646;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.image-el {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
